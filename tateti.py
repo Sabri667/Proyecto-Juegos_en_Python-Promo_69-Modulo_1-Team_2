@@ -2,8 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 import time
 
-# ========== TUS FUNCIONES ORIGINALES (ligeramente adaptadas) ==========
-
 def imprimir_tablero(tablero):
     for i in range(3):
         fila = tablero[i]
@@ -46,7 +44,7 @@ def empatar():
         return True
     return False
 
-# ========== INICIALIZACIÓN DE TUS ESTRUCTURAS ==========
+# ========== INICIALIZACIÓN DE LAS ESTRUCTURAS ==========
 
 # Tablero de juego (lista de listas con espacios)
 L1 = ['   ', '   ', '   ']
@@ -100,10 +98,6 @@ class TatetiGUI:
                 fila_botones.append(btn)
             self.botones.append(fila_botones)
         
-        # Botón de reinicio
-        btn_reiniciar = tk.Button(root, text="Reiniciar", command=self.reiniciar, font=("Arial", 12))
-        btn_reiniciar.pack(pady=10)
-        
         # Mostrar tablero de referencia (opcional)
         self.mostrar_referencia()
     
@@ -121,7 +115,7 @@ class TatetiGUI:
             messagebox.showwarning("\nMovimiento inválido", "Casilla no disponible o ya ocupada.")
             return
         
-        # Colocar la ficha usando tus funciones mover_en_Lx
+        # Colocar la ficha usando las funciones mover_en_Lx
         # Llamamos a las tres de cada fila (solo una hará efecto)
         mover_en_L1(pos, '1', 0, self.turno)
         mover_en_L1(pos, '2', 1, self.turno)
@@ -153,29 +147,6 @@ class TatetiGUI:
         self.jugador_actual = jugador2 if self.jugador_actual == jugador1 else jugador1
         self.label_turno.config(text=f"Turno: {self.jugador_actual} {self.turno}")
     
-    def reiniciar(self):
-        """Reinicia todas las variables y el tablero"""
-        global L1, L2, L3, L1_juego, L2_juego, L3_juego, posiciones_tablero
-        
-        # Reiniciar listas de juego
-        L1 = ['   ', '   ', '   ']
-        L2 = ['   ', '   ', '   ']
-        L3 = ['   ', '   ', '   ']
-        L1_juego = [' 1 ', ' 2 ', ' 3 ']
-        L2_juego = [' 4 ', ' 5 ', ' 6 ']
-        L3_juego = [' 7 ', ' 8 ', ' 9 ']
-        posiciones_tablero = ["1","2","3","4","5","6","7","8","9"]
-        
-        # Reiniciar estado de los botones
-        for i in range(3):
-            for j in range(3):
-                self.botones[i][j].config(text="   ", state="normal")
-        
-        # Reiniciar turno
-        self.turno = ' X '
-        self.jugador_actual = jugador1
-        self.label_turno.config(text=f"Turno: {self.jugador_actual} {self.turno}")
-
 # ========== EJECUCIÓN ==========
 if __name__ == "__main__":
     root = tk.Tk()
