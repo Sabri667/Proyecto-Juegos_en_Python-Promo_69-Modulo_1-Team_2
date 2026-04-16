@@ -64,8 +64,8 @@ tablero_movimientos = [L1_juego, L2_juego, L3_juego]
 posiciones_tablero = ["1","2","3","4","5","6","7","8","9"]
 
 # Nombres de jugadores (puedes cambiarlos después con inputs)
-jugador1 = input("Ingresa el nombre del jugador 1:") or "Jugador 1"
-jugador2 = input("Ingresa el nombre del jugador 2:") or "Jugador 2"
+jugador1 = input("Ingresa el nombre del jugador 1:").title().strip() or "Jugador 1"
+jugador2 = input("Ingresa el nombre del jugador 2:").title().strip() or "Jugador 2"
 
 # ========== INTERFAZ TKINTER ==========
 
