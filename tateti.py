@@ -1,281 +1,184 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "4e626c55",
-   "metadata": {},
-   "source": [
-    "TRES EN RAYA"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "ff5679f8",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n",
-      "\n",
-      "Para empezar, introduce los nombres de los jugadores:\n",
-      "\n",
-      "¡Hola Crono y Paloma!\n",
-      "\n",
-      "Bienvenidxs al clásico 'Tres en raya' o 'Tic Tac Toe'.\n",
-      "\n",
-      "Reglas del Juego:\n",
-      "\n",
-      "* El juego se juega en un tablero de 3x3 con 2 jugadores, uno representa 'X', el otro 'O' y van alternando turnos.\n",
-      "* El objetivo es obtener 3 símbolos del mismo tipo en línea horizontal, vertical o diagonal.\n",
-      "* El juego termina cuando un jugador gana o el tablero se llena (empate).\n",
-      "* El jugador que logre colocar tres de sus símbolos en línea es el ganador.\n",
-      "\n",
-      "Este es el tablero inicial:\n",
-      "\n",
-      "  |   |  \n",
-      "---------\n",
-      "  |   |  \n",
-      "---------\n",
-      "  |   |  \n",
-      "\n",
-      "En cada turno el jugador deberá indicar el número de celda donde marcará su jugada, siempre que esté vacía.\n",
-      "Aquí están las posiciones:\n",
-      "\n",
-      "1 | 2 | 3\n",
-      "---------\n",
-      "4 | 5 | 6\n",
-      "---------\n",
-      "7 | 8 | 9\n",
-      "\n",
-      "¡Buena Suerte!\n",
-      "\n",
-      "Empieza a colocar Crono:\n",
-      "\n",
-      "\n",
-      "Turno de Crono (X)\n",
-      "\n",
-      "  |   |  \n",
-      "---------\n",
-      "  | X |  \n",
-      "---------\n",
-      "  |   |  \n",
-      "\n",
-      "Turno de Paloma (O)\n",
-      "\n",
-      "  |   |  \n",
-      "---------\n",
-      "O | X |  \n",
-      "---------\n",
-      "  |   |  \n",
-      "\n",
-      "Turno de Crono (X)\n",
-      "\n",
-      "\n",
-      "Casilla no disponible o inválida. Elige otra.\n",
-      "\n",
-      "  |   |  \n",
-      "---------\n",
-      "O | X |  \n",
-      "---------\n",
-      "  |   | X\n",
-      "\n",
-      "Turno de Paloma (O)\n",
-      "\n",
-      "\n",
-      "Casilla no disponible o inválida. Elige otra.\n",
-      "\n",
-      "  |   |  \n",
-      "---------\n",
-      "O | X |  \n",
-      "---------\n",
-      "O |   | X\n",
-      "\n",
-      "Turno de Crono (X)\n",
-      "\n",
-      "\n",
-      "Casilla no disponible o inválida. Elige otra.\n",
-      "\n",
-      "\n",
-      "Casilla no disponible o inválida. Elige otra.\n",
-      "\n",
-      "\n",
-      "Casilla no disponible o inválida. Elige otra.\n",
-      "\n",
-      "  |   |  \n",
-      "---------\n",
-      "O | X |  \n",
-      "---------\n",
-      "O | X | X\n",
-      "\n",
-      "Turno de Paloma (O)\n",
-      "\n",
-      "O |   |  \n",
-      "---------\n",
-      "O | X |  \n",
-      "---------\n",
-      "O | X | X\n",
-      "\n",
-      "\n",
-      "¡Enhorabuena Paloma, HAS GANADO!\n",
-      "\n",
-      "Fin del juego.\n",
-      "Gracias por participar.\n"
-     ]
-    }
-   ],
-   "source": [
-    "import time\n",
-    "\n",
-    "# 1. Función para imprimir el tablero (formato lista de listas).\n",
-    "def imprimir_tablero(tablero):\n",
-    "    for i in range(3):\n",
-    "        fila = tablero[i]\n",
-    "        print(\" | \".join(fila))\n",
-    "        if i < 2:\n",
-    "            print(\"---------\")\n",
-    "\n",
-    "# 2. Inicialización del tablero de juego (lista de listas vacías).\n",
-    "L1 = [\" \", \" \", \" \"]\n",
-    "L2 = [\" \", \" \", \" \"]\n",
-    "L3 = [\" \", \" \", \" \"]\n",
-    "tablero_partida = [L1, L2, L3]\n",
-    "\n",
-    "# Tablero de referencia con números para mostrar posiciones al usuario.\n",
-    "L1_ref = [\"1\", \"2\", \"3\"]\n",
-    "L2_ref = [\"4\", \"5\", \"6\"]\n",
-    "L3_ref = [\"7\", \"8\", \"9\"]\n",
-    "tablero_movimientos = [L1_ref, L2_ref, L3_ref]\n",
-    "\n",
-    "# Lista de posiciones disponibles (para validar movimientos en cada turno).\n",
-    "posiciones_tablero = [\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\"]\n",
-    "\n",
-    "# 3. Función para realizar un movimiento con validación de casilla ocupada.\n",
-    "def mover(ficha, tablero, posiciones):\n",
-    "    while True:\n",
-    "        movimiento = input(f'Introduce en qué casilla quieres poner tu {ficha}: ')\n",
-    "        if movimiento not in posiciones:\n",
-    "            print(\"Casilla no disponible o inválida. Elige otra.\\n\")\n",
-    "            continue\n",
-    "        \n",
-    "        # Convierte número a índice de fila y columna (0-2).\n",
-    "        num = int(movimiento) - 1\n",
-    "        fila = num // 3\n",
-    "        col = num % 3\n",
-    "        \n",
-    "        if tablero[fila][col] != \" \":\n",
-    "            print(\"\\nCasilla ocupada. Elegí otra.\\n\")\n",
-    "            continue\n",
-    "        \n",
-    "        # Coloca la ficha y actualiza posiciones disponibles\n",
-    "        tablero[fila][col] = ficha\n",
-    "        posiciones.remove(movimiento)\n",
-    "        return True\n",
-    "\n",
-    "# 4. Valida si hay ganador\n",
-    "def verificar_ganador(tablero, ficha):\n",
-    "    # Verifica filas.\n",
-    "    for i in range(3):\n",
-    "        if tablero[i][0] == ficha and tablero[i][1] == ficha and tablero[i][2] == ficha:\n",
-    "            return True\n",
-    "    # Verifica columnas.\n",
-    "    for i in range(3):\n",
-    "        if tablero[0][i] == ficha and tablero[1][i] == ficha and tablero[2][i] == ficha:\n",
-    "            return True\n",
-    "    # Verifica diagonales.\n",
-    "    if tablero[0][0] == ficha and tablero[1][1] == ficha and tablero[2][2] == ficha:\n",
-    "        return True\n",
-    "    if tablero[0][2] == ficha and tablero[1][1] == ficha and tablero[2][0] == ficha:\n",
-    "        return True\n",
-    "    return False\n",
-    "\n",
-    "# 5. Valida si hay empate.\n",
-    "def verificar_empate(posiciones):\n",
-    "    return len(posiciones) == 0\n",
-    "\n",
-    "# 6. Presentación del juego.\n",
-    "print(\"\\n\\nPara empezar, introduce los nombres de los jugadores:\\n\")\n",
-    "jugador1 = input('Nombre del Jugador 1 (X): ').title().strip() or 'Jugador 1'\n",
-    "jugador2 = input('Nombre del Jugador 2 (O): ').title().strip() or 'JUgador 2'\n",
-    "\n",
-    "print(f\"¡Hola {jugador1} y {jugador2}!\\n\\nBienvenidxs al clásico 'Tres en raya' o 'Tic Tac Toe'.\\n\")\n",
-    "print(\"Reglas del Juego:\\n\")\n",
-    "print(\"* El juego se juega en un tablero de 3x3 con 2 jugadores, uno representa 'X', el otro 'O' y van alternando turnos.\")\n",
-    "print(\"* El objetivo es obtener 3 símbolos del mismo tipo en línea horizontal, vertical o diagonal.\")\n",
-    "print(\"* El juego termina cuando un jugador gana o el tablero se llena (empate).\")\n",
-    "print(\"* El jugador que logre colocar tres de sus símbolos en línea es el ganador.\\n\")\n",
-    "\n",
-    "print(\"Este es el tablero inicial:\\n\")\n",
-    "imprimir_tablero(tablero_partida)\n",
-    "\n",
-    "print(\"\\nEn cada turno el jugador deberá indicar el número de celda donde marcará su jugada, siempre que esté vacía.\")\n",
-    "print(\"Aquí están las posiciones:\\n\")\n",
-    "imprimir_tablero(tablero_movimientos)\n",
-    "print(\"\\n¡Buena Suerte!\\n\")\n",
-    "\n",
-    "print(f\"Empieza a colocar {jugador1}:\\n\")\n",
-    "\n",
-    "# 7. Bucle principal (alterna turnos hasta ganador o empate)\n",
-    "turno = 0  # 0 = jugador1 (X), 1 = jugador2 (O)\n",
-    "ganador = False\n",
-    "empate = False\n",
-    "\n",
-    "while not ganador and not empate:\n",
-    "    if turno == 0:\n",
-    "        ficha = \"X\"\n",
-    "        jugador_actual = jugador1\n",
-    "    else:\n",
-    "        ficha = \"O\"\n",
-    "        jugador_actual = jugador2\n",
-    "    \n",
-    "    print(f\"\\nTurno de {jugador_actual} ({ficha})\")\n",
-    "    print()\n",
-    "    mover(ficha, tablero_partida, posiciones_tablero)\n",
-    "    imprimir_tablero(tablero_partida)\n",
-    "    \n",
-    "    # Verifica si hay ganador después del movimiento\n",
-    "    if verificar_ganador(tablero_partida, ficha):\n",
-    "        print()\n",
-    "        print(f\"\\n¡Enhorabuena {jugador_actual}, HAS GANADO!\")\n",
-    "        ganador = True\n",
-    "        break\n",
-    "    13\n",
-    "    # Verifica si hay empate\n",
-    "    if verificar_empate(posiciones_tablero):\n",
-    "        print()\n",
-    "        print(f\"\\n{jugador1} y {jugador2}... ¡Habéis empatado!\")\n",
-    "        empate = True\n",
-    "        break\n",
-    "    \n",
-    "    # Cambia turno\n",
-    "    turno = 1 - turno\n",
-    "    time.sleep(0.5)\n",
-    "\n",
-    "print(\"\\nFin del juego.\\n¡Gracias por participar!\")"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "base",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.13.12"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+import tkinter as tk
+from tkinter import messagebox
+import time
+
+# ========== TUS FUNCIONES ORIGINALES (ligeramente adaptadas) ==========
+
+def imprimir_tablero(tablero):
+    for i in range(3):
+        fila = tablero[i]
+        print(" | ".join(fila))
+        if i < 2:
+            print("---------------")
+
+def mover_en_L1(movimiento, posicion, indice, ficha):
+    if movimiento == posicion:
+        L1[indice] = ficha
+        L1_juego[indice] = ' · '
+        posiciones_tablero.remove(posicion)
+
+def mover_en_L2(movimiento, posicion, indice, ficha):
+    if movimiento == posicion:
+        L2[indice] = ficha
+        L2_juego[indice] = ' · '
+        posiciones_tablero.remove(posicion)
+
+def mover_en_L3(movimiento, posicion, indice, ficha):
+    if movimiento == posicion:
+        L3[indice] = ficha
+        L3_juego[indice] = ' · '
+        posiciones_tablero.remove(posicion)
+
+def ganar2(ficha, jugador):
+    if (L1.count(ficha) == 3 or L2.count(ficha) == 3 or L3.count(ficha) == 3 or
+        L1[0]==ficha and L2[0]==ficha and L3[0]==ficha or
+        L1[1]==ficha and L2[1]==ficha and L3[1]==ficha or
+        L1[2]==ficha and L2[2]==ficha and L3[2]==ficha or
+        L1[0]==ficha and L2[1]==ficha and L3[2]==ficha or
+        L1[2]==ficha and L2[1]==ficha and L3[0]==ficha):
+        messagebox.showinfo("Fin del juego", f"¡Enhorabuena {jugador}, HAS GANADO! :)")
+        return True
+    return False
+
+def empatar():
+    if len(posiciones_tablero) == 0:
+        messagebox.showinfo("Fin del juego", f"{jugador1} y {jugador2}... ¡Habéis empatado!")
+        return True
+    return False
+
+# ========== INICIALIZACIÓN DE TUS ESTRUCTURAS ==========
+
+# Tablero de juego (lista de listas con espacios)
+L1 = ['   ', '   ', '   ']
+L2 = ['   ', '   ', '   ']
+L3 = ['   ', '   ', '   ']
+tablero_partida = [L1, L2, L3]
+
+# Tablero de referencia (con números)
+L1_juego = [' 1 ', ' 2 ', ' 3 ']
+L2_juego = [' 4 ', ' 5 ', ' 6 ']
+L3_juego = [' 7 ', ' 8 ', ' 9 ']
+tablero_movimientos = [L1_juego, L2_juego, L3_juego]
+
+# Posiciones disponibles (se van eliminando)
+posiciones_tablero = ["1","2","3","4","5","6","7","8","9"]
+
+# Nombres de jugadores (puedes cambiarlos después con inputs)
+jugador1 = input("Ingresa el nombre del jugador 1:") or "Jugador 1"
+jugador2 = input("Ingresa el nombre del jugador 2:") or "Jugador 2"
+
+# ========== INTERFAZ TKINTER ==========
+
+class TatetiGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Tres en Raya - Tu Tateti")
+        self.root.geometry("350x450")
+        
+        # Variables de estado
+        self.turno = ' X '   # ficha con espacios como en tu código
+        self.jugador_actual = jugador1
+        
+        # Etiqueta de turno
+        self.label_turno = tk.Label(root, text=f"Turno: {self.jugador_actual} {self.turno}", font=("Arial", 14))
+        self.label_turno.pack(pady=10)
+        
+        # Marco para los botones del tablero
+        frame = tk.Frame(root)
+        frame.pack()
+        
+        # Crear 3x3 botones, cada uno asociado a una posición
+        self.botones = []
+        for i in range(3):
+            fila_botones = []
+            for j in range(3):
+                # Número de casilla (1..9)
+                num = i * 3 + j + 1
+                btn = tk.Button(frame, text="   ", font=("Arial", 20), width=4, height=2,
+                                command=lambda n=num: self.hacer_movimiento(n))
+                btn.grid(row=i, column=j, padx=2, pady=2)
+                fila_botones.append(btn)
+            self.botones.append(fila_botones)
+        
+        # Botón de reinicio
+        btn_reiniciar = tk.Button(root, text="Reiniciar", command=self.reiniciar, font=("Arial", 12))
+        btn_reiniciar.pack(pady=10)
+        
+        # Mostrar tablero de referencia (opcional)
+        self.mostrar_referencia()
+    
+    def mostrar_referencia(self):
+        """Muestra en consola las posiciones (como hacías antes)"""
+        print("Posiciones de las casillas:\n")
+        imprimir_tablero(tablero_movimientos)
+    
+    def hacer_movimiento(self, num):
+        """Se ejecuta cuando un jugador clickea un botón"""
+        pos = str(num)
+        
+        # Validar que la casilla esté disponible
+        if pos not in posiciones_tablero:
+            messagebox.showwarning("\nMovimiento inválido", "Casilla no disponible o ya ocupada.")
+            return
+        
+        # Colocar la ficha usando tus funciones mover_en_Lx
+        # Llamamos a las tres de cada fila (solo una hará efecto)
+        mover_en_L1(pos, '1', 0, self.turno)
+        mover_en_L1(pos, '2', 1, self.turno)
+        mover_en_L1(pos, '3', 2, self.turno)
+        mover_en_L2(pos, '4', 0, self.turno)
+        mover_en_L2(pos, '5', 1, self.turno)
+        mover_en_L2(pos, '6', 2, self.turno)
+        mover_en_L3(pos, '7', 0, self.turno)
+        mover_en_L3(pos, '8', 1, self.turno)
+        mover_en_L3(pos, '9', 2, self.turno)
+        
+        # Actualizar el texto del botón (mostrar la ficha sin espacios extra)
+        fila = (num-1) // 3
+        col = (num-1) % 3
+        self.botones[fila][col].config(text=self.turno.strip(), state="disabled")
+        
+        # Verificar si hay ganador (usando tu función ganar2)
+        if ganar2(self.turno, self.jugador_actual):
+            self.root.quit()  # Cierra la ventana después de mostrar el mensaje
+            return
+        
+        # Verificar empate
+        if empatar():
+            self.root.quit()
+            return
+        
+        # Cambiar turno
+        self.turno = ' O ' if self.turno == ' X ' else ' X '
+        self.jugador_actual = jugador2 if self.jugador_actual == jugador1 else jugador1
+        self.label_turno.config(text=f"Turno: {self.jugador_actual} {self.turno}")
+    
+    def reiniciar(self):
+        """Reinicia todas las variables y el tablero"""
+        global L1, L2, L3, L1_juego, L2_juego, L3_juego, posiciones_tablero
+        
+        # Reiniciar listas de juego
+        L1 = ['   ', '   ', '   ']
+        L2 = ['   ', '   ', '   ']
+        L3 = ['   ', '   ', '   ']
+        L1_juego = [' 1 ', ' 2 ', ' 3 ']
+        L2_juego = [' 4 ', ' 5 ', ' 6 ']
+        L3_juego = [' 7 ', ' 8 ', ' 9 ']
+        posiciones_tablero = ["1","2","3","4","5","6","7","8","9"]
+        
+        # Reiniciar estado de los botones
+        for i in range(3):
+            for j in range(3):
+                self.botones[i][j].config(text="   ", state="normal")
+        
+        # Reiniciar turno
+        self.turno = ' X '
+        self.jugador_actual = jugador1
+        self.label_turno.config(text=f"Turno: {self.jugador_actual} {self.turno}")
+
+# ========== EJECUCIÓN ==========
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = TatetiGUI(root)
+    root.mainloop()
+    print("\nFin del juego. Gracias por participar.")
