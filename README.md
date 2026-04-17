@@ -40,17 +40,17 @@ Responde correctamente, evita los errores… ¡y demuestra que eres dignx de Hog
 
 ## 🚀 Características
 
--🧙‍♀️ Personalización con nombre del jugador
--❓ Preguntas aleatorias en cada partida
--🔤 Opciones tipo test (A, B, C, D)
--✅ Sistema de aciertos y errores
--🏆💀 Deteccion automatica de victoria y derrota
+- 🧙‍♀️ Personalización con nombre del jugador
+- ❓ Preguntas aleatorias en cada partida
+- 🔤 Opciones tipo test (A, B, C, D)
+- ✅ Sistema de aciertos y errores
+- 🏆💀 Deteccion automatica de victoria y derrota
 
 ---
 
 ## 🛠️ Requisitos
 
--Python 3.x
+- Python 3.x
 
 ---
 
