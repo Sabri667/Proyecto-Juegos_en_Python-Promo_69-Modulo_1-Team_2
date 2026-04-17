@@ -3,7 +3,7 @@ from tkinter import messagebox, simpledialog
 import random
 
 # --- 1. PREPARACIÓN DE DATOS ---
-# He mapeado tus respuestas para que el sistema sepa cuál letra es la correcta
+
 preguntas_dict = {
     '¿Quién es el mejor amigo de Harry Potter?': ['A: Ron Weasley','B: Neville Longbottom', 'C: Hermione Granger', 'D: Draco Malfoy'],
     '¿Qué animal es la mascota de Harry?' : ['A: Un gato', 'B: Una rata', 'C: Una lechuza', 'D: Un sapo'],
@@ -45,6 +45,7 @@ def iniciar():
 
     if not nombre_jugador: nombre_jugador = "Jugador 1"
     ventana.title(f"Trivial de Harry Potter - Jugador: {nombre_jugador}")
+    messagebox.showinfo('','NORMAS DEL JUEGO:\n Debes acertar 5 preguntas para ganar.\nSi por el contrario fallas 3 veces, perdiste.') 
     siguiente_pregunta()
 
 
@@ -84,11 +85,11 @@ def comprobar(letra, boton_pulsado):
     
     if letra == soluciones[pregunta_actual]:
         aciertos += 1
-        messagebox.showwarning("¡Cooorrecto!","¡Sigue así!")
+        messagebox.showwarning("Acierto","¡Cooorrecto!\n¡Sigue así!")
         ventana.after(500, siguiente_pregunta) # Espera medio segundo y pasa a la siguiente
     else:
         errores += 1
-        messagebox.showwarning("¡Incorrecto!", f"La respuesta era la {soluciones[pregunta_actual]}")
+        messagebox.showwarning("Fallo", f"¡Casiii...!\n La respuesta correcta era la {soluciones[pregunta_actual]}")
         siguiente_pregunta()
 
 # --- 4. DISEÑO DE LA INTERFAZ ---
