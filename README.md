@@ -1,4 +1,4 @@
-# 🎮 Proyecto 1 - Juegos en Python  
+# 🎮 Proyecto 2 - Juegos en Python  
 ## 🧠 Data Analytics Bootcamp | Adalab
 
 Este repositorio contiene el desarrollo del **Proyecto 2** del bootcamp de **Data Analytics de Adalab**, donde diseñamos e implementamos dos juegos clásicos utilizando Python.
@@ -9,7 +9,7 @@ El objetivo del proyecto fue aplicar lógica de programación, estructuras de da
 
 ## 👩‍💻 Equipo
 
-Proyecto desarrollado por un equipo de 4 alumnas:
+Proyecto desarrollado por :
 
 - ✨ Sabrina Giselle Gómez Trujillo
 - ✨ Estefania Zamorano Mancilla
