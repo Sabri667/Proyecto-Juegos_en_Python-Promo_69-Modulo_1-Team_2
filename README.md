@@ -11,10 +11,10 @@ El objetivo del proyecto fue aplicar lógica de programación, estructuras de da
 
 Proyecto desarrollado por un equipo de 4 alumnas:
 
-- ✨ [Sabrina Giselle Gómez Trujillo]
-- ✨ [Estefania Zamorano ]
-- ✨ [Julia Corada]
-- ✨ [Jessica Hernández]
+- ✨ Sabrina Giselle Gómez Trujillo
+- ✨ Estefania Zamorano Mancilla
+- ✨ Julia Corada Montano
+- ✨ Jessica Hernández Collar
 
 ---
 
