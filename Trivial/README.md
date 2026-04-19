@@ -24,7 +24,8 @@ Responde correctamente, evita los errores… ¡y demuestra que eres dignx de Hog
 ## ▶️ Cómo ejecutar
 
  Clona este repositorio o copia el código:
-   ```bash
-   git clone https://github.com/Sabri667/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2.git cd Trivial.py
-   ```
+ 
+   git clone https://github.com/Sabri667/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2.git 
+   cd Trivial.py
+
 
