@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import messagebox
-import time
 
 def imprimir_tablero(tablero):
     for i in range(3):
@@ -79,11 +78,11 @@ class TatetiGUI:
         
         # Etiqueta de turno
         self.label_turno = tk.Label(root, text=f"Turno: {self.jugador_actual} {self.turno}", font=("Arial", 14))
-        self.label_turno.pack(pady=10)
-        
+        self.label_turno.pack(pady=10) #.pack() posiciona el elemento.pady=10 añade espacio vertical.  
+
         # Marco para los botones del tablero
-        frame = tk.Frame(root)
-        frame.pack()
+        frame = tk.Frame(root) #los agrupa
+        frame.pack() #aca los contiene
         
         # Crear 3x3 botones, cada uno asociado a una posición
         self.botones = []
