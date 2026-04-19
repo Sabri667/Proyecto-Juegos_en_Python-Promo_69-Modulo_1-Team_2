@@ -1,63 +1,70 @@
-# 🎮 Tres en Raya (Ta-Te-Ti)
+# 🎮 Proyecto 1 - Juegos en Python  
+## 🧠 Data Analytics Bootcamp | Adalab
 
-Un clásico de clásicos llevado a la terminal: **Tres en Raya**, también conocido como *Ta-Te-Ti* o *Tic Tac Toe*.  
-Dos jugadores, un tablero 3x3 y una sola misión: alinear tres fichas antes que tu rival.
+Este repositorio contiene el desarrollo del **Proyecto 2** del bootcamp de **Data Analytics de Adalab**, donde diseñamos e implementamos dos juegos clásicos utilizando Python.
+
+El objetivo del proyecto fue aplicar lógica de programación, estructuras de datos y buenas prácticas de código en un entorno práctico y colaborativo.
 
 ---
 
-## 🚀 Características
+## 👩‍💻 Equipo
 
-- 👥 Juego para 2 jugadores
-- ❌⭕ Sistema de turnos (X vs O)
-- 📋 Tablero interactivo en consola
+Proyecto desarrollado por un equipo de 4 alumnas:
+
+- ✨ [Sabrina Giselle Gómez Trujillo]
+- ✨ [Estefania Zamorano ]
+- ✨ [Julia Corada]
+- ✨ [Jessica Hernández]
+
+---
+
+## 🎯 Objetivos del proyecto
+
+- Aplicar lógica de programación en Python.
+- Trabajar con estructuras de datos (listas, condicionales, loops).
+- Diseñar programas interactivos en consola.
+- Introducir conceptos de modularización.
+- Fomentar el trabajo en equipo.
+
+---
+
+## 🕹️ Juegos desarrollados
+
+### 1. 🎮 Tres en Raya (Ta-Te-Ti)
+
+Implementación del clásico juego de tablero 3x3 para dos jugadores.
+
+**Características:**
+- ❌⭕ Turnos alternados
+- 📋 Tablero dinámico en consola
 - ✅ Validación de movimientos
-- 🏆 Detección automática de ganador
+- 🏆 Detección de ganador
 - 🤝 Detección de empate
 
 ---
 
-## 🛠️ Requisitos
+### 2. 🧠 Trivial (Juego de preguntas)
 
-- Python 3.x
+Juego tipo quiz donde el usuario responde preguntas de diferentes categorías.
 
----
-
-## ▶️ Cómo ejecutar
-
- Clona este repositorio o copia el código:
- ```bash
-   git clone https://github.com/Sabri667/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2
-   cd TresEnRaya.py
-```
----
-
-# 🧙‍♂️ Trivial de Harry Potter
-
-Pon a prueba tus conocimientos del mundo mágico con este Trivial de Harry Potter hecho en Python con interfaz gráfica.
-Responde correctamente, evita los errores… ¡y demuestra que eres dignx de Hogwarts!
+**Características:**
+- ❓ Preguntas con opciones múltiples
+- 📊 Sistema de puntuación
+- 🔁 Flujo de preguntas dinámico
+- 🎯 Evaluación de respuestas
 
 ---
 
-## 🚀 Características
+## 🛠️ Tecnologías utilizadas
 
-- 🧙‍♀️ Personalización con nombre del jugador
-- ❓ Preguntas aleatorias en cada partida
-- 🔤 Opciones tipo test (A, B, C, D)
-- ✅ Sistema de aciertos y errores
-- 🏆💀 Deteccion automatica de victoria y derrota
+- Python 3.
+- Librerías estándar (`time`, `random`.).
+- (Opcional) Tkinter para interfaz gráfica en algunas versiones.
 
 ---
 
-## 🛠️ Requisitos
+## ▶️ Cómo ejecutar el proyecto
 
-- Python 3.x
+1. Clonar el repositorio:
 
----
-
-## ▶️ Cómo ejecutar
-
- Clona este repositorio o copia el código:
-   ```bash
-   git clone https://github.com/Sabri667/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2.git cd Trivial.py
-   ```
-
+git clone https://github.com/Sabri667/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2.git
