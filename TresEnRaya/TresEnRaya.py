@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, simpledialog
 
 def imprimir_tablero(tablero):
     for i in range(3):
@@ -60,11 +60,15 @@ tablero_movimientos = [L1_juego, L2_juego, L3_juego]
 # Posiciones disponibles (se van eliminando)
 posiciones_tablero = ["1","2","3","4","5","6","7","8","9"]
 
-# Nombres de jugadores (puedes cambiarlos después con inputs)
-jugador1 = input("Ingresa el nombre del jugador 1:").title().strip() or "Jugador 1"
-jugador2 = input("Ingresa el nombre del jugador 2:").title().strip() or "Jugador 2"
+# Nombres de jugadores 
 
-# ========== INTERFAZ TKINTER ==========
+ventana_temp = tk.Tk()
+ventana_temp.withdraw()  
+
+jugador1 = simpledialog.askstring("Jugadores", "Nombre del Jugador 1:") or "Jugador 1"
+jugador2 = simpledialog.askstring("Jugadores", "Nombre del Jugador 2:") or "Jugador 2"
+
+ventana_temp.destroy()# ========== INTERFAZ TKINTER ==========
 
 class TatetiGUI:
     def __init__(self, root):
