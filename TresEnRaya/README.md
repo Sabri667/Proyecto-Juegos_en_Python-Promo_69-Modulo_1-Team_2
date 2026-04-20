@@ -25,9 +25,9 @@ Dos jugadores, un tablero 3x3 y una sola misión: alinear tres fichas antes que 
 ## ▶️ Cómo ejecutar
 
  Clona este repositorio o copia el código:
- ```bash
+
    git clone https://github.com/Sabri667/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2
    cd TresEnRaya.py
-```
+
 
 
