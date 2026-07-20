@@ -1,4 +1,4 @@
-# 🎮 Proyecto 2 - Juegos en Python  
+# 🎮 Proyecto Módulo 1 - Juegos en Python  
 ## 🧠 Data Analytics Bootcamp | Adalab
 
 Este repositorio contiene el desarrollo del **Proyecto 2** del bootcamp de **Data Analytics de Adalab**, donde diseñamos e implementamos dos juegos clásicos utilizando Python.
@@ -7,7 +7,7 @@ El objetivo del proyecto fue aplicar lógica de programación, estructuras de da
 
 ---
 
-## 👩‍💻 Equipo
+## 👩‍💻 Equipo 2
 
 Proyecto desarrollado por :
 
@@ -67,4 +67,4 @@ Juego tipo quiz donde el usuario responde preguntas de diferentes categorías.
 
 1. Clonar el repositorio:
 
-git clone https://github.com/Sabri667/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2.git
+git clone https://github.com/juliacorada/Adalab-proyecto-da-promo-69-modulo-1-team-2.git
