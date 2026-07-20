@@ -67,4 +67,4 @@ Juego tipo quiz donde el usuario responde preguntas de diferentes categorías.
 
 1. Clonar el repositorio:
 
-git clone https://github.com/juliacorada/Adalab-proyecto-da-promo-69-modulo-1-team-2.git
+git clone https://github.com/SabrinaGomezTrujillo/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2.git

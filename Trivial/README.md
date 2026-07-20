@@ -25,7 +25,7 @@ Responde correctamente, evita los errores… ¡y demuestra que eres dignx de Hog
 
  Clona este repositorio o copia el código:
  
-   git clone https://github.com/juliacorada/Adalab-proyecto-da-promo-69-modulo-1-team-2.git
+   git clone https://github.com/SabrinaGomezTrujillo/Proyecto-Juegos_en_Python-Promo_69-Modulo_1-Team_2.git
    cd Trivial.py
 
 
